@@ -1,0 +1,26 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:4.0
+    restart: always
+    container_name: dev_db
+    volumes:
+      - /data/chase/team_management/data/db:/data/db
+    ports:
+      - "27018:27017"
+  app:
+    build: .
+    image: registry.gitlab.com/invente/chase/apis/team-management-domain-apis:latest
+    container_name: dev_team_mgnt
+    restart: always
+    ports:
+      - "8086:8086"
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+    stdin_open: true
+    tty: true
+
+
+

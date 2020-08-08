@@ -1,0 +1,17 @@
+amazonProperties:
+   endpointUrl: https://s3.ap-south-1.amazonaws.com
+   accessKey: AKIATPJDD2LSLAWKSKRK
+   secretKey: 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
+   bucketName: picture-s3-bucket
+spring:
+ servlet:
+  multipart:
+   max-file-size: 100MB
+   max-request-size: 100MB
+
+   
+ data:
+    mongodb:
+      database: teamManagementDomainApis
+      port: 27017
+      host: localhost  
