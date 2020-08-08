@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+  postgresdb:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=chase_db      
+  app:
+    build: .
+    image: registry.gitlab.com/invente/chase/apis/search-service-apis:latest
+    container_name: dev_search_service
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresdb
+    links:
+      - postgresdb
+    stdin_open: true
+    tty: true
+
