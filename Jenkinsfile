@@ -10,7 +10,7 @@ node('master') {
   stages { 
        stage('SCM checkout'){
         steps{
-            git branch: 'master', credentialsId: '4785454d-1ea6-440a-8c83-cbb0400aa191', url: 'https://github.com/karunakarreddych/assignments.git'
+            git branch: 'master', credentialsId: 'fd8c337c-6670-4621-8aef-58f6db408b08', url: 'https://github.com/karunakarreddych/assignments.git'
         }
     }
       stage('mvn build'){
