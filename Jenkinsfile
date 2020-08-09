@@ -1,4 +1,6 @@
-pipeline { 
+#!groovy
+
+node {
 
     environment { 
         registry = "35.153.93.153:8123/dockerrepo" 
