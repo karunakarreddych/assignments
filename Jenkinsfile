@@ -1,13 +1,12 @@
 #!groovy
 
-node {
+node('master') {
 
     environment { 
         registry = "35.153.93.153:8123/dockerrepo" 
         registryCredential = 'nexus' 
         dockerImage = ''
     }
-    agent any 
   stages { 
        stage('SCM checkout'){
         steps{
